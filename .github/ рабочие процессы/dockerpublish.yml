@@ -1,8 +1,11 @@
 name: Publish Docker
-on: [push]
+on:
+  push:
+    tags:
+      - '*'   
 jobs:
-  build:
-   runs-on: ubuntu-latest
+ run_docker:
+    runs-on: [ubuntu-latest]
 env:
  LOGIN: ${{ secrets.DOCKER_LOGIN }}
  NAME: ${{ secrets.DOCKER_NAME }}
