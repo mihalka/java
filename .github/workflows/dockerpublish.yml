@@ -2,7 +2,7 @@ name: Publish Docker
 on: [push]
 jobs:
   build:
-   runs-on: centos-latest
+   runs-on: ubuntu-latest
 env:
  LOGIN: ${{ secrets.DOCKER_LOGIN }}
  NAME: ${{ secrets.DOCKER_NAME }}
