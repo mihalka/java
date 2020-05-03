@@ -1,5 +1,9 @@
 on:
- release:
+ push:
+   tags:
+     - '*'
+   branches:
+     - '*'
    types: [published]
 env:
  LOGIN: ${{ secrets.DOCKER_LOGIN }}
