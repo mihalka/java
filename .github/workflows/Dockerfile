@@ -1,5 +1,5 @@
 FROM maven
-ADD graph /usr/src/graph
+ADD java /usr/src/graph
 WORKDIR /usr/src/graph
 RUN mvn package
 EXPOSE 8080
