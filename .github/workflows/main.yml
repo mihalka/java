@@ -13,4 +13,4 @@ jobs:
       - id: build
         run: sudo docker build -t artemonishchuk/java .
       - id: push
-        run: docker pull artemonishchuk/java 
+        run: docker push artemonishchuk/java 
