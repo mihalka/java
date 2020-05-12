@@ -16,4 +16,4 @@ jobs:
       - id: build
         run: sudo docker build -t $LOGIN/$NAME .
       - id: push
-        run: docker push $LOGIN/$NAME 
+        run: docker pull $LOGIN/$NAME 
