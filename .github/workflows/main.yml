@@ -6,14 +6,14 @@ on:
 jobs:
   job_1:
     runs-on: ubuntu-latest
-env:
- LOGIN: ${{ secrets.DOCKER_LOGIN }}
- NAME: ${{ secrets.DOCKER_NAME }}  
+    env:
+      LOGIN: ${{ secrets.DOCKER_LOGIN }}
+      NAME: ${{ secrets.DOCKER_NAME }} 
     steps:
       - id: login
-        run: echo ${{ secrets.DOCKER_PWD }} | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       - uses: actions/checkout@master
       - id: build
-        run: sudo docker build -t $LOGIN/$NAME .
+        run: sudo docker build -t b094d7b21ad5/graph .
       - id: push
-        run: docker push $LOGIN/$NAME
+        run: docker push b094d7b21ad5/graph 
